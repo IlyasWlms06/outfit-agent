@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outfit Agent</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Outfit Agent</h1>
+            <p class="subtitel">Een outfit uit je eigen kledingkast, op basis van gelegenheid en weer</p>
+        </header>
+
+        <!-- Formulier met de keuzes van de gebruiker -->
+        <form id="formulier" class="card">
+            <div class="veld">
+                <label for="gender">Voor wie?</label>
+                <select id="gender">
+                    <option value="vrouw">Vrouw</option>
+                    <option value="man">Man</option>
+                </select>
+            </div>
+            <div class="veld">
+                <label for="gelegenheid">Gelegenheid</label>
+                <select id="gelegenheid">
+                    <option value="">Maakt niet uit</option>
+                    <option value="casual">Casual (dagelijks)</option>
+                    <option value="formeel">Formeel (werk, feest)</option>
+                    <option value="sport">Sport</option>
+                </select>
+            </div>
+            <div class="veld">
+                <label for="temperatuur">Temperatuur (°C)</label>
+                <input type="number" id="temperatuur" placeholder="bv. 12">
+            </div>
+            <div class="veld">
+                <label for="regen">Regen?</label>
+                <input type="checkbox" id="regen">
+            </div>
+            <div class="veld">
+                <label for="aantal">Aantal outfits</label>
+                <input type="number" id="aantal" value="3" min="1" max="10">
+            </div>
+            <button type="submit">Geef outfits</button>
+        </form>
+
+        <!-- Hier komt een melding (laden, fout, niets gevonden) -->
+        <p id="melding"></p>
+
+        <!-- Hier komen de outfits -->
+        <section id="resultaten"></section>
+    </div>
+</body>
+</html>

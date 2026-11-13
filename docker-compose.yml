@@ -1,0 +1,22 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: outfit-backend
+    environment:
+      PORT: 5000
+    ports:
+      # API ook rechtstreeks bereikbaar om te testen
+      - "${BACKEND_PORT:-5000}:5000"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: outfit-frontend
+    ports:
+      # Website op je pc uit .env, anders 8080
+      - "${FRONTEND_PORT:-8080}:8080"
+    depends_on:
+      - backend
+    restart: unless-stopped
